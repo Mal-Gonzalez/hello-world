@@ -1,4 +1,48 @@
 #!/bin/bash
+#This is M-Gonzalez' first attempt at a bash script. General bash foolishness plus notes on how to manipulate bash.
 
-echo "Hello world! It's a beautiful day for GNU!"
-echo "Goodbye!"
+echo "Hello world! It's a beautiful day for GNU!"	#Prints Hello world!
+
+foo=3 							#Declared a variable. Remember no spaces, this isn't python.
+
+echo $foo 						#prints foo
+
+unset foo						#unset removes the variable
+
+echo $foo						#prints nothing (blank line)
+
+bar=12
+
+foo=$bar
+
+echo $foo						#prints 12
+
+#foo=x y z						#intentional error
+
+foo="x y z"
+
+foo[0]=1
+
+foo[1]=2
+
+echo ${foo[1]}
+
+echo ${foo[0]}
+
+foo=("a a a" "bbb" "calzone")  				#initialized as an array.
+
+echo ${foo[2]}
+
+echo ${foo[@]} 						#or *, both are fine. Prints everying.
+
+foo=(a b c)
+
+bar=("${foo[@]}")
+
+echo ${bar[*]}
+
+bar=$foo
+
+echo $bar						#intentional logic error, only returns ${foo[1]}). Also, quotes are a good habit to get into.
+
+echo "Farewell!"				 	#Prints goodbye
