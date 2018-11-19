@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Hello world! It's a beautiful day for GNU!"
+echo "Goodbye!"
