@@ -1,0 +1,41 @@
+#!/bin/bash
+
+#Some special variables in bash.
+
+echo $0 #prints the name of the script.
+
+echo $1 #prints argument number 1
+
+echo $2 #prints the second argument
+
+echo $9 #prints the ninth argument
+
+echo $10 #prints the FIRST arguement followed by 0.
+
+echo ${10} #prints the tenth argument.
+
+true
+echo $? #This gives the exit statement of the previous process. 0 is succeded, anything else is an error.
+
+false
+echo $? #will print a non-zero.
+
+#$! prints the previous background process.
+
+#STRING REPLACEMENT
+
+foo="i'm a cat, and she's a cat"
+echo $foo
+echo ${foo/cat/dog} #replaces the first instance with cat with dog, then prints
+echo ${foo//cat/dog} #replaces the whole thing.
+echo $foo #note none of these things changed the original.
+
+foo="I like meatballs"
+echo ${foo/balls} #removes, no replacer
+echo $foo
+
+#removal. The pattern ${name#pattern} removes the shortest PREFIX of ${name} matching the pattern, while ## removes the longest.
+
+minipath='/usr/bin:/bin:/sbin'
+echo ${minipath#/usr}
+echo ${minipath#*/bin}
